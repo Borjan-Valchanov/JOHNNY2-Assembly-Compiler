@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 namespace JASMCompiler {
 	public static class Program {
 		static readonly string EOL = Environment.NewLine;
-		static readonly Dictionary<string, short> opcodes = new Dictionary<string, short>() {
+		static readonly Dictionary<string, int> opcodes = new Dictionary<string, int>() {
 			{"DATA", 0000},
 			{"TAKE", 1000},
 			{"ADD",  2000},
@@ -50,7 +50,7 @@ namespace JASMCompiler {
 			stopwatch.Start();
 
 			for (int i = 0; i < 1000; i++) {
-				short compiledInstruction = 0;
+				int compiledInstruction = 0;
 				if (i < jasm.Length) {
 					string[] jasmInstruction = jasm[i].Split(' ');
 					if (jasmInstruction.Length > 2) Console.WriteLine($"[WARN] Instruction in line {i} contains excessive parameters. Ignoring.");
@@ -63,7 +63,7 @@ namespace JASMCompiler {
 						}
 						if (jasmInstruction.Length > 1) {
 							try {
-								compiledInstruction += Convert.ToInt16(jasmInstruction[1]);
+								compiledInstruction += Convert.ToInt32(jasmInstruction[1]);
 							} catch (FormatException) {
 								Console.WriteLine($"[ERROR] Invalid parameter \"{jasmInstruction[1]}\" in line {i}. Terminating.");
 								return;
