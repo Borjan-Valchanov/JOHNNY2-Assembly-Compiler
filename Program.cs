@@ -2,8 +2,8 @@
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 
-namespace JASMCompiler {
-	public static class Program {
+namespace JASM {
+	public static class Assembler {
 		static readonly string EOL = Environment.NewLine;
 		static readonly Dictionary<string, int> opcodes = new Dictionary<string, int>() {
 			{"DATA", 0000},

@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "JASMCompiler": {
+    "JASM": {
       "commandName": "Project",
       "commandLineArgs": "-i:\"D:\\temp\\jasm\\multiply.jasm\" -o:\"%userprofile%\\Desktop\\multiply.ram\""
     }
